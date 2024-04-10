@@ -74,37 +74,12 @@ const displayController = function (player, board) {
         for (let i = 0; i<9; i++) {
             cells[i].textContent = '';
         }
-        turnText.textContent = 'Turn: x';
-        player.shape = 'x';
+        turnText.textContent = `Turn: ${player.shape}`;
     })
 }
 
 const game = (function (player, board) {
     displayController(player, board);
-    // let i = 0
-    // while (checkGameStatus(board.get()) && i !== 9) {
-    //     let choice;
-    //     while (board[choice] === 'x' || board.get()[choice] === 'o' || choice === undefined || choice < 0 || choice > 8) {
-    //         choice = prompt(`Where do you want to put ${player.shape}?`);
-    //     }
-    //     board.changeCell(choice, player.shape);
-    //     board.display();
-    //     if (checkGameStatus(board.get())) {
-    //         if (player.shape === 'x') {
-    //             player.shape = 'o';
-    //         }
-    //         else {
-    //             player.shape = 'x';
-    //         }
-    //     }
-    //     i++;
-    // }
-    // if (i === 9 && checkGameStatus(board.get())) {
-    //     console.log('Tie');
-    // }
-    // else {
-    //     console.log(`${player.shape} wins!`);
-    // }
 });
 
 game(player('x'), gameBoard());
